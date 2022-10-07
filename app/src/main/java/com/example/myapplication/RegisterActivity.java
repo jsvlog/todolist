@@ -64,21 +64,29 @@ public class RegisterActivity extends AppCompatActivity {
 
         if(emailText.isEmpty()){
             registerEmail.setError("please Enter email");
+            return;
         }else if (passwordText.isEmpty()){
             registerPassword.setError("please Enter password");
+            return;
         }else if (passwordText.length() < 6){
             registerPassword.setError("password should atleast 6 character");
+            return;
         }else if (!passwordText.equals(passwordText2)){
            registerPasswordConfirm.setError("password confirmation did not match!");
-        }mAuth.createUserWithEmailAndPassword(emailText,passwordText).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    Toast.makeText(RegisterActivity.this, "Login Succesful", Toast.LENGTH_SHORT).show();
-
+           return;
+        }else {
+            mAuth.createUserWithEmailAndPassword(emailText, passwordText).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(RegisterActivity.this, "Registration Succesful", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
                 }
-            }
-        });
+            });
+        }
 
     }
 
