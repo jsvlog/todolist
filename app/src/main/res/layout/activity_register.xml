@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background_design"
-    tools:context=".LoginActivity">
-
+    tools:context=".RegisterActivity">
 
     <ImageView
 
@@ -20,7 +19,7 @@
 
 
     <EditText
-        android:id="@+id/loginEmail"
+        android:id="@+id/registerEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Email"
@@ -34,7 +33,7 @@
         android:drawablePadding="10dp"/>
 
     <EditText
-        android:id="@+id/loginPassword"
+        android:id="@+id/registerPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter Password"
@@ -47,11 +46,25 @@
         android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="10dp"/>
 
-    <Button
-        android:id="@+id/loginButton"
+    <EditText
+        android:id="@+id/registerPasswordConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:hint="Confirm Password"
+        android:layout_margin="10dp"
+        android:textColor="#fff"
+        android:textColorHint="#fff"
+        android:padding="10dp"
+        android:background="@drawable/inputs"
+        android:inputType="textPassword"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="10dp"/>
+
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
         android:textAllCaps="false"
         android:layout_margin="10dp"
         android:textColor="@color/black"
@@ -59,20 +72,12 @@
         />
 
     <TextView
-        android:id="@+id/loginQuestion"
+        android:id="@+id/registerQuestion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Don't have an account? Register"
+        android:text="Already have an account? Log in"
         android:gravity="center"
         android:textColor="@color/black"/>
-
-
-
-
-
-
-
-
 
 
 </LinearLayout>
