@@ -29,7 +29,7 @@
         android:padding="10dp"
         android:background="@drawable/inputs"
         android:inputType="textEmailAddress"
-        android:drawableStart="@drawable/ic_baseline_mail_24"
+        android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawablePadding="10dp"/>
 
     <EditText
@@ -78,6 +78,8 @@
         android:text="Already have an account? Log in"
         android:gravity="center"
         android:textColor="@color/black"/>
+
+
 
 
 </LinearLayout>
