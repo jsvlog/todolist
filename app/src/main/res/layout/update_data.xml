@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:background="@drawable/for_cardview">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="2dp">
+            <TextView
+                android:id="@+id/dateUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="UPDATE TASK"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:background="#FF2B2B"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="2dp">
+            <EditText
+                android:id="@+id/taskUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="task"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+            <EditText
+                android:id="@+id/descriptionUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="description"
+                android:textStyle="bold"
+                android:textSize="20sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/deleteUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="DELETE"
+                android:textStyle="bold"
+                android:background="@drawable/for_button"
+                android:textColor="#FF8888"
+                android:textSize="20sp"
+                />
+            <Button
+                android:id="@+id/updateUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="UPDATE"
+                android:textStyle="bold"
+                android:background="@drawable/for_button"
+                android:textColor="#FF8888"
+                android:textSize="20sp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
