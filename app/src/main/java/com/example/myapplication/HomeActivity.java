@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -37,6 +40,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private DatabaseReference reference;
     private FirebaseAuth mAuth;
+
     private FirebaseUser mUser;
     private String onlineUserID;
 
@@ -83,6 +87,8 @@ public class HomeActivity extends AppCompatActivity {
 
     }
 
+
+    // on start and on stop is used here for adapter in recyclerview, the variable option here in the conctructor for adapter
     @Override
     protected void onStart() {
         super.onStart();
@@ -100,6 +106,7 @@ public class HomeActivity extends AppCompatActivity {
         myAdapter.stopListening();
     }
 
+    //this trigger uppon clicking fab icon
     private void addTask() {
         AlertDialog.Builder myDialog = new AlertDialog.Builder(this);
         LayoutInflater inflater = LayoutInflater.from(this);
@@ -163,4 +170,26 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
 
+
+    //this is use for log out menu to the top.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    //when they click the logout this will trigger
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logout:
+                mAuth.signOut();
+                Intent intent = new Intent(HomeActivity.this,LoginActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+                finish();
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }
